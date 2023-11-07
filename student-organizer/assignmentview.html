@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset='utf-8'>
+        <meta name="robots" content="noindex,noarchive,nofollow"/>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+        <title>Your Course Organizer</title>
+        <script language="JavaScript">
+            function showform(dowhat) {
+                /*
+                * four DIVS: browse, insert, update, delete
+                * this function sets one visible the others not
+                */
+                if (dowhat == 'insert'){
+                    document.getElementById('browse').style.display = 'none';
+                    document.getElementById('insert').style.display = 'block';
+                    document.getElementById('update').style.display = 'none';
+                    document.getElementById('delete').style.display = 'none';
+                }
+                else if (dowhat == 'update'){
+                    document.getElementById('browse').style.display = 'none';
+                    document.getElementById('insert').style.display = 'none';
+                    document.getElementById('update').style.display = 'block';
+                    document.getElementById('delete').style.display = 'none';
+                }
+                else if (dowhat == 'delete'){
+                    document.getElementById('browse').style.display = 'none';
+                    document.getElementById('insert').style.display = 'none';
+                    document.getElementById('update').style.display = 'none';
+                    document.getElementById('delete').style.display = 'block';
+                }
+          else if (dowhat == 'all'){
+                    document.getElementById('browse').style.display = 'block';
+                    document.getElementById('insert').style.display = 'block';
+                    document.getElementById('update').style.display = 'block';
+                    document.getElementById('delete').style.display = 'block';
+                }
+                else { //by default display browse
+                    document.getElementById('browse').style.display = 'block';
+                    document.getElementById('insert').style.display = 'none';
+                    document.getElementById('update').style.display = 'none';
+                    document.getElementById('delete').style.display = 'none';
+                }
+            }
+        function newAssignment() { showform('insert'); }
+        function updateAssignment(pid) { showform('update'); }
+        function deleteAssignment(pid) { showform ('delete'); }
+        function browseAssignments() { showform ('browse'); }
+        function showAll() { showform ('all'); }
+    </script>
+    </head>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="courseview.html">Course View</a>
+        <a href="scheduleview.html">Schedule View</a>
+        <a href="assignmentview.html">Assignment View</a>
+    </nav>
+    <header>
+        <div class="schoollogo">
+            school logo here
+        </div>
+    </header>
+    <body>
+        <section>
+            <h2>To Do</h2>
+            <div class="todo-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Assignment Name</th>
+                            <th>Progress</th>
+                            <th>Due Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CS361</td>
+                            <td>Assignment 1</td>
+                            <td>In Progress</td>
+                            <td>11/31/23</td>
+                        </tr>
+                        <tr>
+                            <td>CS325</td>
+                            <td>Homework 2</td>
+                            <td>Not Started</td>
+                            <td>12/01/23</td>
+                        </tr>
+                        <!-- Add more rows for other tasks -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </body>
+    <footer>
+
+    </footer>
+</html>
